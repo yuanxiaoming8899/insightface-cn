@@ -1,188 +1,112 @@
-
-# InsightFace: 2D and 3D Face Analysis Project
-
-<div align="left">
-  <img src="https://insightface.ai/assets/img/custom/logo3.jpg" width="240"/>
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">InsightFace：2D 和 3D 人脸分析项目</font></font></h1><a id="user-content-insightface-2d-and-3d-face-analysis-project" class="anchor-element" aria-label="永久链接：InsightFace：2D 和 3D 人脸分析项目" href="#insightface-2d-and-3d-face-analysis-project"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div align="left" dir="auto">
+  <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/de9d2bff29ddbabd8cf59d425bde2d055ccecf3d4fcb4f395372ea82f8c87ab4/68747470733a2f2f696e7369676874666163652e61692f6173736574732f696d672f637573746f6d2f6c6f676f332e6a7067"><img src="https://camo.githubusercontent.com/de9d2bff29ddbabd8cf59d425bde2d055ccecf3d4fcb4f395372ea82f8c87ab4/68747470733a2f2f696e7369676874666163652e61692f6173736574732f696d672f637573746f6d2f6c6f676f332e6a7067" width="240" data-canonical-src="https://insightface.ai/assets/img/custom/logo3.jpg" style="max-width: 100%;"></a>
 </div>
-
-InsightFace project is mainly maintained By [Jia Guo](mailto:guojia@gmail.com?subject=[GitHub]%20InsightFace%20Project) and [Jiankang Deng](https://jiankangdeng.github.io/). 
-
-For all main contributors, please check [contributing](#contributing).
-
-## License
-
-The code of InsightFace is released under the MIT License. There is no limitation for both academic and commercial usage.
-
-The training data containing the annotation (and the models trained with these data) are available for non-commercial research purposes only.
-
-Both manual-downloading models from our github repo and auto-downloading models with our [python-library](python-package) follow the above license policy(which is for non-commercial research purposes only).
-
-## Top News
-
-**`2023-08-08`**: We released the implementation of [Generalizing Gaze Estimation with Weak-Supervision from Synthetic Views](https://arxiv.org/abs/2212.02997) at [reconstruction/gaze](reconstruction/gaze).
-
-**`2023-05-03`**: We have launched the ongoing version of wild face anti-spoofing challenge. See details [here](https://github.com/deepinsight/insightface/tree/master/challenges/cvpr23-fas-wild#updates).
-
-**`2023-04-01`**: We move the swapping demo to Discord bot, which support editing on Midjourney generated images, see detail at [web-demos/swapping_discord](web-demos/swapping_discord).
-
-**`2023-02-13`**: We launch a large scale in the wild face anti-spoofing challenge on CVPR23 Workshop, see details at [challenges/cvpr23-fas-wild](challenges/cvpr23-fas-wild).
-
-**`2022-11-28`**: Single line code for facial identity swapping in our python packge ver 0.7, please check the example [here](examples/in_swapper).
-
-**`2022-10-28`**: [MFR-Ongoing](http://iccv21-mfr.com) website is refactored, please create issues if there's any bug.
-
-**`2022-09-22`**: Now we have [web-demos](web-demos): [face-localization](http://demo.insightface.ai:7007/), [face-recognition](http://demo.insightface.ai:7008/), and [face-swapping](http://demo.insightface.ai:7009/).
-
-**`2022-08-12`**: We achieved Rank-1st of 
-[Perspective Projection Based Monocular 3D Face Reconstruction Challenge](https://tianchi.aliyun.com/competition/entrance/531961/introduction)
-of [ECCV-2022 WCPA Workshop](https://sites.google.com/view/wcpa2022), [paper](https://arxiv.org/abs/2208.07142) and [code](reconstruction/jmlr).
-
-**`2022-03-30`**: [Partial FC](https://arxiv.org/abs/2203.15565) accepted by CVPR-2022.
-
-**`2022-02-23`**: [SCRFD](detection/scrfd) accepted by [ICLR-2022](https://iclr.cc/Conferences/2022).
-
-**`2021-11-30`**: [MFR-Ongoing](challenges/mfr) challenge launched(same with IFRT), which is an extended version of [iccv21-mfr](challenges/iccv21-mfr).
-
-**`2021-10-29`**: We achieved 1st place on the [VISA track](https://pages.nist.gov/frvt/plots/11/visa.html) of [NIST-FRVT 1:1](https://pages.nist.gov/frvt/html/frvt11.html) by using Partial FC (Xiang An, Jiankang Deng, Jia Guo).
-
-**`2021-10-11`**: [Leaderboard](https://insightface.ai/mfr21) of [ICCV21 - Masked Face Recognition Challenge](challenges/iccv21-mfr) released. Video: [Youtube](https://www.youtube.com/watch?v=lL-7l5t6x2w), [Bilibili](https://www.bilibili.com/video/BV15b4y1h79N/).
-
-**`2021-06-05`**: We launch a [Masked Face Recognition Challenge & Workshop](challenges/iccv21-mfr) on ICCV 2021.
-
-
-
-## Introduction
-
-[InsightFace](https://insightface.ai) is an open source 2D&3D deep face analysis toolbox, mainly based on PyTorch and MXNet. 
-
-Please check our [website](https://insightface.ai) for detail.
-
-The master branch works with **PyTorch 1.6+** and/or **MXNet=1.6-1.8**, with **Python 3.x**.
-
-InsightFace efficiently implements a rich variety of state of the art algorithms of face recognition, face detection and face alignment, which optimized for both training and deployment.
-
-## Quick Start
-
-Please start with our [python-package](python-package/), for testing detection, recognition and alignment models on input images.
-
-
-### ArcFace Video Demo
-
-
-[<img src=https://insightface.ai/assets/img/github/facerecognitionfromvideo.PNG width="760" />](https://www.youtube.com/watch?v=y-D1tReryGA&t=81s)
-
-
-Please click the image to watch the Youtube video. For Bilibili users, click [here](https://www.bilibili.com/video/av38041494?from=search&seid=11501833604850032313).
-
-
-
-## Projects
-
-The [page](https://insightface.ai/projects) on InsightFace website also describes all supported projects in InsightFace.
-
-You may also interested in some [challenges](https://insightface.ai/challenges) hold by InsightFace.
-
-
-
-## Face Recognition
-
-### Introduction
-
-In this module, we provide training data, network settings and loss designs for deep face recognition.
-
-The supported methods are as follows:
-
-- [x] [ArcFace_mxnet (CVPR'2019)](recognition/arcface_mxnet)
-- [x] [ArcFace_torch (CVPR'2019)](recognition/arcface_torch)
-- [x] [SubCenter ArcFace (ECCV'2020)](recognition/subcenter_arcface)
-- [x] [PartialFC_mxnet (CVPR'2022)](recognition/partial_fc)
-- [x] [PartialFC_torch (CVPR'2022)](recognition/arcface_torch)
-- [x] [VPL (CVPR'2021)](recognition/vpl)
-- [x] [Arcface_oneflow](recognition/arcface_oneflow)
-- [x] [ArcFace_Paddle (CVPR'2019)](recognition/arcface_paddle)
-
-Commonly used network backbones are included in most of the methods, such as IResNet, MobilefaceNet, MobileNet, InceptionResNet_v2, DenseNet, etc..
-
-
-### Datasets
-
-The training data includes, but not limited to the cleaned MS1M, VGG2 and CASIA-Webface datasets, which were already packed in MXNet binary format. Please [dataset](recognition/_datasets_) page for detail.
-
-### Evaluation
-
-We provide standard IJB and Megaface evaluation pipelines in [evaluation](recognition/_evaluation_)
-
-
-### Pretrained Models
-
-**Please check [Model-Zoo](https://github.com/deepinsight/insightface/wiki/Model-Zoo) for more pretrained models.**
-
-### Third-party Re-implementation of ArcFace
-
-- TensorFlow: [InsightFace_TF](https://github.com/auroua/InsightFace_TF)
-- TensorFlow: [tf-insightface](https://github.com/AIInAi/tf-insightface)
-- TensorFlow:[insightface](https://github.com/Fei-Wang/insightface)
-- PyTorch: [InsightFace_Pytorch](https://github.com/TreB1eN/InsightFace_Pytorch)
-- PyTorch: [arcface-pytorch](https://github.com/ronghuaiyang/arcface-pytorch)
-- Caffe: [arcface-caffe](https://github.com/xialuxi/arcface-caffe)
-- Caffe: [CombinedMargin-caffe](https://github.com/gehaocool/CombinedMargin-caffe)
-- Tensorflow: [InsightFace-tensorflow](https://github.com/luckycallor/InsightFace-tensorflow)
-- TensorRT: [wang-xinyu/tensorrtx](https://github.com/wang-xinyu/tensorrtx)  
-- TensorRT: [InsightFace-REST](https://github.com/SthPhoenix/InsightFace-REST)
-- ONNXRuntime C++: [ArcFace-ONNXRuntime](https://github.com/DefTruth/lite.ai.toolkit/blob/main/lite/ort/cv/glint_arcface.cpp)
-- ONNXRuntime Go: [arcface-go](https://github.com/jack139/arcface-go)
-- MNN: [ArcFace-MNN](https://github.com/DefTruth/lite.ai.toolkit/blob/main/lite/mnn/cv/mnn_glint_arcface.cpp)
-- TNN: [ArcFace-TNN](https://github.com/DefTruth/lite.ai.toolkit/blob/main/lite/tnn/cv/tnn_glint_arcface.cpp)
-- NCNN: [ArcFace-NCNN](https://github.com/DefTruth/lite.ai.toolkit/blob/main/lite/ncnn/cv/ncnn_glint_arcface.cpp)
-
-## Face Detection
-
-### Introduction
-
-<div align="left">
-  <img src="https://insightface.ai/assets/img/github/11513D05.jpg" width="640"/>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">InsightFace项目主要由</font></font><a href="mailto:guojia@gmail.com?subject=%5BGitHub%5D%20InsightFace%20Project"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">郭嘉</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://jiankangdeng.github.io/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">邓建康</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">维护。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">对于所有主要贡献者，请检查</font></font><a href="#contributing"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">执照</font></font></h2><a id="user-content-license" class="anchor-element" aria-label="永久链接：许可证" href="#license"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">InsightFace的代码是在MIT许可证下发布的。</font><font style="vertical-align: inherit;">学术和商业用途均没有限制。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">包含注释的训练数据（以及使用这些数据训练的模型）仅可用于非商业研究目的。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">从我们的 github 存储库手动下载模型和使用</font></font><a href="/deepinsight/insightface/blob/master/python-package"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">python 库</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自动下载模型都遵循上述许可政策（仅用于非商业研究目的）。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">热门新闻</font></font></h2><a id="user-content-top-news" class="anchor-element" aria-label="永久链接：热门新闻" href="#top-news"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><strong><code>2023-08-08</code></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：我们在</font><a href="/deepinsight/insightface/blob/master/reconstruction/gaze"><font style="vertical-align: inherit;">重建/注视时发布了</font></a></font><a href="https://arxiv.org/abs/2212.02997" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">综合视图弱监督广义注视估计</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">的实现</font><font style="vertical-align: inherit;">。</font></font><a href="/deepinsight/insightface/blob/master/reconstruction/gaze"><font style="vertical-align: inherit;"></font></a><font style="vertical-align: inherit;"></font></p>
+<p dir="auto"><strong><code>2023-05-03</code></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：我们推出了正在进行的野脸反欺骗挑战版本。</font></font><a href="https://github.com/deepinsight/insightface/tree/master/challenges/cvpr23-fas-wild#updates"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请参阅此处的</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">详细信息</font><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><strong><code>2023-04-01</code></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：我们将交换演示移至 Discord 机器人，该机器人支持对 Midjourney 生成的图像进行编辑，请参阅</font></font><a href="/deepinsight/insightface/blob/master/web-demos/swapping_discord"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">web-demos/swapping_discord</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">详细信息。</font></font></p>
+<p dir="auto"><strong><code>2023-02-13</code></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：我们在 CVPR23 Workshop 上发起了大规模的野外人脸反欺骗挑战赛，详情参见</font></font><a href="/deepinsight/insightface/blob/master/challenges/cvpr23-fas-wild"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Challenges/cvpr23-fas-wild</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><strong><code>2022-11-28</code></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：我们的 python 包版本 0.7 中用于面部身份交换的单行代码，请查看</font></font><a href="/deepinsight/insightface/blob/master/examples/in_swapper"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">此处的</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">示例。</font></font></p>
+<p dir="auto"><strong><code>2022-10-28</code></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：</font></font><a href="http://iccv21-mfr.com" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MFR-Ongoing</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">网站已重构，如有bug请提出issue。</font></font></p>
+<p dir="auto"><strong><code>2022-09-22</code></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：现在我们有</font></font><a href="/deepinsight/insightface/blob/master/web-demos"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">网络演示</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：</font></font><a href="http://demo.insightface.ai:7007/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">面部定位</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><a href="http://demo.insightface.ai:7008/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">面部识别</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="http://demo.insightface.ai:7009/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">面部交换</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><strong><code>2022-08-12</code></strong><font style="vertical-align: inherit;"><a href="https://sites.google.com/view/wcpa2022" rel="nofollow"><font style="vertical-align: inherit;">：我们在ECCV-2022 WCPA 研讨会</font></a><font style="vertical-align: inherit;">、</font><a href="https://arxiv.org/abs/2208.07142" rel="nofollow"><font style="vertical-align: inherit;">论文</font></a><font style="vertical-align: inherit;">和</font><a href="/deepinsight/insightface/blob/master/reconstruction/jmlr"><font style="vertical-align: inherit;">代码</font></a><font style="vertical-align: inherit;">
+的</font></font><a href="https://tianchi.aliyun.com/competition/entrance/531961/introduction" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">基于透视投影的单目 3D 人脸重建挑战赛中</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">获得排名第一
+</font><font style="vertical-align: inherit;">。</font></font><a href="https://sites.google.com/view/wcpa2022" rel="nofollow"><font style="vertical-align: inherit;"></font></a><font style="vertical-align: inherit;"></font><a href="https://arxiv.org/abs/2208.07142" rel="nofollow"><font style="vertical-align: inherit;"></font></a><font style="vertical-align: inherit;"></font><a href="/deepinsight/insightface/blob/master/reconstruction/jmlr"><font style="vertical-align: inherit;"></font></a><font style="vertical-align: inherit;"></font></p>
+<p dir="auto"><strong><code>2022-03-30</code></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：</font></font><a href="https://arxiv.org/abs/2203.15565" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">部分 FC</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">被 CVPR-2022 接受。</font></font></p>
+<p dir="auto"><strong><code>2022-02-23</code></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：</font></font><a href="/deepinsight/insightface/blob/master/detection/scrfd"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SCRFD已被</font></font></a><font style="vertical-align: inherit;"></font><a href="https://iclr.cc/Conferences/2022" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ICLR-2022</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">接受</font><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><strong><code>2021-11-30</code></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：</font></font><a href="/deepinsight/insightface/blob/master/challenges/mfr"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MFR-Ongoing Challenge 启动（与 IFRT 相同），它是</font></font></a><font style="vertical-align: inherit;"></font><a href="/deepinsight/insightface/blob/master/challenges/iccv21-mfr"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">iccv21-mfr</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">的扩展版本</font><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><strong><code>2021-10-29</code></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：我们使用部分FC（安翔、邓建康、郭佳）在</font><a href="https://pages.nist.gov/frvt/html/frvt11.html" rel="nofollow"><font style="vertical-align: inherit;">NIST-FRVT 1:1</font></a><font style="vertical-align: inherit;">的</font></font><a href="https://pages.nist.gov/frvt/plots/11/visa.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">VISA赛道</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上获得第一名。</font></font><a href="https://pages.nist.gov/frvt/html/frvt11.html" rel="nofollow"><font style="vertical-align: inherit;"></font></a><font style="vertical-align: inherit;"></font></p>
+<p dir="auto"><strong><code>2021-10-11</code></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：</font><a href="/deepinsight/insightface/blob/master/challenges/iccv21-mfr"><font style="vertical-align: inherit;">ICCV21蒙面人脸识别挑战赛</font></a><font style="vertical-align: inherit;">排行榜</font></font><a href="https://insightface.ai/mfr21" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">发布</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">视频：</font><a href="https://www.youtube.com/watch?v=lL-7l5t6x2w" rel="nofollow"><font style="vertical-align: inherit;">YouTube</font></a><font style="vertical-align: inherit;">、</font><a href="https://www.bilibili.com/video/BV15b4y1h79N/" rel="nofollow"><font style="vertical-align: inherit;">哔哩哔哩</font></a><font style="vertical-align: inherit;">。</font></font><a href="/deepinsight/insightface/blob/master/challenges/iccv21-mfr"><font style="vertical-align: inherit;"></font></a><font style="vertical-align: inherit;"></font><a href="https://www.youtube.com/watch?v=lL-7l5t6x2w" rel="nofollow"><font style="vertical-align: inherit;"></font></a><font style="vertical-align: inherit;"></font><a href="https://www.bilibili.com/video/BV15b4y1h79N/" rel="nofollow"><font style="vertical-align: inherit;"></font></a><font style="vertical-align: inherit;"></font></p>
+<p dir="auto"><strong><code>2021-06-05</code></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：我们在 ICCV 2021 上</font><font style="vertical-align: inherit;">推出</font></font><a href="/deepinsight/insightface/blob/master/challenges/iccv21-mfr"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">蒙面人脸识别挑战赛和研讨会。</font></font></a><font style="vertical-align: inherit;"></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">介绍</font></font></h2><a id="user-content-introduction" class="anchor-element" aria-label="永久链接：简介" href="#introduction"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a href="https://insightface.ai" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">InsightFace</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">是一个开源的2D&amp;3D深度人脸分析工具箱，主要基于PyTorch和MXNet。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">详情</font><font style="vertical-align: inherit;">请查看我们的</font></font><a href="https://insightface.ai" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">网站。</font></font></a><font style="vertical-align: inherit;"></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">master 分支与</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PyTorch 1.6+</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和/或</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MXNet=1.6-1.8</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以及</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Python 3.x</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">一起使用。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">InsightFace 有效地实现了各种最先进的人脸识别、人脸检测和人脸对齐算法，并针对训练和部署进行了优化。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">快速开始</font></font></h2><a id="user-content-quick-start" class="anchor-element" aria-label="永久链接：快速入门" href="#quick-start"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="/deepinsight/insightface/blob/master/python-package"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请从我们的python-package</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开始</font><font style="vertical-align: inherit;">，用于测试输入图像的检测、识别和对齐模型。</font></font></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ArcFace 视频演示</font></font></h3><a id="user-content-arcface-video-demo" class="anchor-element" aria-label="永久链接：ArcFace 视频演示" href="#arcface-video-demo"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a href="https://www.youtube.com/watch?v=y-D1tReryGA&amp;t=81s" rel="nofollow"><img src="https://camo.githubusercontent.com/868d17685427ca17cbe69480702c7455c229e684093bdb8660688b425a0dc370/68747470733a2f2f696e7369676874666163652e61692f6173736574732f696d672f6769746875622f666163657265636f676e6974696f6e66726f6d766964656f2e504e47" width="760" data-canonical-src="https://insightface.ai/assets/img/github/facerecognitionfromvideo.PNG" style="max-width: 100%;"></a></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请点击图片观看 Youtube 视频。</font><font style="vertical-align: inherit;">B站用户请点击</font></font><a href="https://www.bilibili.com/video/av38041494?from=search&amp;seid=11501833604850032313" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这里</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">项目</font></font></h2><a id="user-content-projects" class="anchor-element" aria-label="永久链接：项目" href="#projects"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://insightface.ai/projects" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">InsightFace网站上的页面</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">还</font><font style="vertical-align: inherit;">描述了InsightFace中所有支持的项目。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">您可能还对InsightFace 提出的一些</font></font><a href="https://insightface.ai/challenges" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">挑战</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">感兴趣。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">人脸识别</font></font></h2><a id="user-content-face-recognition" class="anchor-element" aria-label="永久链接：人脸识别" href="#face-recognition"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">介绍</font></font></h3><a id="user-content-introduction-1" class="anchor-element" aria-label="永久链接：简介" href="#introduction-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在本模块中，我们提供深度人脸识别的训练数据、网络设置和损失设计。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持的方法如下：</font></font></p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> <a href="/deepinsight/insightface/blob/master/recognition/arcface_mxnet"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ArcFace_mxnet (CVPR'2019)</font></font></a></li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> <a href="/deepinsight/insightface/blob/master/recognition/arcface_torch"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ArcFace_torch (CVPR'2019)</font></font></a></li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> <a href="/deepinsight/insightface/blob/master/recognition/subcenter_arcface"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SubCenter ArcFace (ECCV'2020)</font></font></a></li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> <a href="/deepinsight/insightface/blob/master/recognition/partial_fc"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PartialFC_mxnet (CVPR'2022)</font></font></a></li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> <a href="/deepinsight/insightface/blob/master/recognition/arcface_torch"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PartialFC_torch (CVPR'2022)</font></font></a></li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> <a href="/deepinsight/insightface/blob/master/recognition/vpl"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">VPL（CVPR'2021）</font></font></a></li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> <a href="/deepinsight/insightface/blob/master/recognition/arcface_oneflow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Arcface_oneflow</font></font></a></li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> <a href="/deepinsight/insightface/blob/master/recognition/arcface_paddle"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ArcFace_Paddle (CVPR'2019)</font></font></a></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">大多数方法中都包含了常用的网络主干，例如IResNet、MobilefaceNet、MobileNet、InceptionResNet_v2、DenseNet等。</font></font></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">数据集</font></font></h3><a id="user-content-datasets" class="anchor-element" aria-label="永久链接：数据集" href="#datasets"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">训练数据包括但不限于清理后的 MS1M、VGG2 和 CASIA-Webface 数据集，这些数据集已经以 MXNet 二进制格式打包。</font><font style="vertical-align: inherit;">请</font></font><a href="/deepinsight/insightface/blob/master/recognition/_datasets_"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">数据集</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">页面了解详细信息。</font></font></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">评估</font></font></h3><a id="user-content-evaluation" class="anchor-element" aria-label="永久链接：评估" href="#evaluation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><a href="/deepinsight/insightface/blob/master/recognition/_evaluation_"><font style="vertical-align: inherit;">我们在评估</font></a><font style="vertical-align: inherit;">中提供标准的IJB和Megaface评估管道</font></font><a href="/deepinsight/insightface/blob/master/recognition/_evaluation_"><font style="vertical-align: inherit;"></font></a></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">预训练模型</font></font></h3><a id="user-content-pretrained-models" class="anchor-element" aria-label="永久链接：预训练模型" href="#pretrained-models"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请查看</font></font><a href="https://github.com/deepinsight/insightface/wiki/Model-Zoo"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Model-Zoo</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">了解更多预训练模型。</font></font></strong></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ArcFace 的第三方重新实现</font></font></h3><a id="user-content-third-party-re-implementation-of-arcface" class="anchor-element" aria-label="永久链接：ArcFace 的第三方重新实现" href="#third-party-re-implementation-of-arcface"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TensorFlow：</font></font><a href="https://github.com/auroua/InsightFace_TF"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">InsightFace_TF</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TensorFlow：</font></font><a href="https://github.com/AIInAi/tf-insightface"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">tf-insightface</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TensorFlow：</font></font><a href="https://github.com/Fei-Wang/insightface"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">insightface</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PyTorch：</font></font><a href="https://github.com/TreB1eN/InsightFace_Pytorch"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">InsightFace_Pytorch</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PyTorch：</font></font><a href="https://github.com/ronghuaiyang/arcface-pytorch"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arcface-pytorch</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Caffe：</font></font><a href="https://github.com/xialuxi/arcface-caffe"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arcface-caffe</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Caffe：</font></font><a href="https://github.com/gehaocool/CombinedMargin-caffe"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">组合Margin-caffe</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tensorflow：</font></font><a href="https://github.com/luckycallor/InsightFace-tensorflow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">InsightFace-tensorflow</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TensorRT：</font></font><a href="https://github.com/wang-xinyu/tensorrtx"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">wang-xinyu/tensorrtx</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TensorRT：</font></font><a href="https://github.com/SthPhoenix/InsightFace-REST"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">InsightFace-REST</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ONNXRuntime C++：</font></font><a href="https://github.com/DefTruth/lite.ai.toolkit/blob/main/lite/ort/cv/glint_arcface.cpp"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ArcFace-ONNXRuntime</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ONNXRuntime Go：</font></font><a href="https://github.com/jack139/arcface-go"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arcface-go</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MNN：</font></font><a href="https://github.com/DefTruth/lite.ai.toolkit/blob/main/lite/mnn/cv/mnn_glint_arcface.cpp"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ArcFace-MNN</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TNN：</font></font><a href="https://github.com/DefTruth/lite.ai.toolkit/blob/main/lite/tnn/cv/tnn_glint_arcface.cpp"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ArcFace-TNN</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NCNN：</font></font><a href="https://github.com/DefTruth/lite.ai.toolkit/blob/main/lite/ncnn/cv/ncnn_glint_arcface.cpp"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ArcFace-NCNN</font></font></a></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">人脸检测</font></font></h2><a id="user-content-face-detection" class="anchor-element" aria-label="永久链接：人脸检测" href="#face-detection"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">介绍</font></font></h3><a id="user-content-introduction-2" class="anchor-element" aria-label="永久链接：简介" href="#introduction-2"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div align="left" dir="auto">
+  <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/579ee491d8e6303b78250904adfd1b3d7dbb379f583aa90f59dca5e3c1933325/68747470733a2f2f696e7369676874666163652e61692f6173736574732f696d672f6769746875622f31313531334430352e6a7067"><img src="https://camo.githubusercontent.com/579ee491d8e6303b78250904adfd1b3d7dbb379f583aa90f59dca5e3c1933325/68747470733a2f2f696e7369676874666163652e61692f6173736574732f696d672f6769746875622f31313531334430352e6a7067" width="640" data-canonical-src="https://insightface.ai/assets/img/github/11513D05.jpg" style="max-width: 100%;"></a>
 </div>
-
-In this module, we provide training data with annotation, network settings and loss designs for face detection training, evaluation and inference.
-
-The supported methods are as follows:
-
-- [x] [RetinaFace (CVPR'2020)](detection/retinaface)
-- [x] [SCRFD (Arxiv'2021)](detection/scrfd)
-- [x] [blazeface_paddle](detection/blazeface_paddle)
-
-[RetinaFace](detection/retinaface) is a practical single-stage face detector which is accepted by [CVPR 2020](https://openaccess.thecvf.com/content_CVPR_2020/html/Deng_RetinaFace_Single-Shot_Multi-Level_Face_Localisation_in_the_Wild_CVPR_2020_paper.html). We provide training code, training dataset, pretrained models and evaluation scripts. 
-
-[SCRFD](detection/scrfd) is an efficient high accuracy face detection approach which is initialy described in [Arxiv](https://arxiv.org/abs/2105.04714). We provide an easy-to-use pipeline to train high efficiency face detectors with NAS supporting.
-
-
-## Face Alignment
-
-### Introduction
-
-<div align="left">
-  <img src="https://insightface.ai/assets/img/custom/thumb_sdunet.png" width="600"/>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在本模块中，我们提供带有注释、网络设置和损失设计的训练数据，用于人脸检测训练、评估和推理。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持的方法如下：</font></font></p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> <a href="/deepinsight/insightface/blob/master/detection/retinaface"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RetinaFace (CVPR'2020)</font></font></a></li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> <a href="/deepinsight/insightface/blob/master/detection/scrfd"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SCRFD (Arxiv'2021)</font></font></a></li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> <a href="/deepinsight/insightface/blob/master/detection/blazeface_paddle"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">blazeface_paddle</font></font></a></li>
+</ul>
+<p dir="auto"><a href="/deepinsight/insightface/blob/master/detection/retinaface"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RetinaFace</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">是一款实用的单级人脸检测器，已被</font></font><a href="https://openaccess.thecvf.com/content_CVPR_2020/html/Deng_RetinaFace_Single-Shot_Multi-Level_Face_Localisation_in_the_Wild_CVPR_2020_paper.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CVPR 2020</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">接受。</font><font style="vertical-align: inherit;">我们提供训练代码、训练数据集、预训练模型和评估脚本。</font></font></p>
+<p dir="auto"><a href="/deepinsight/insightface/blob/master/detection/scrfd"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SCRFD</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">是一种高效、高精度的人脸检测方法，最初在</font></font><a href="https://arxiv.org/abs/2105.04714" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Arxiv</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中进行了描述。</font><font style="vertical-align: inherit;">我们提供易于使用的管道来训练具有 NAS 支持的高效人脸检测器。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">面部对齐</font></font></h2><a id="user-content-face-alignment" class="anchor-element" aria-label="永久链接：面部对齐" href="#face-alignment"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">介绍</font></font></h3><a id="user-content-introduction-3" class="anchor-element" aria-label="永久链接：简介" href="#introduction-3"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div align="left" dir="auto">
+  <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/bd31ecf2c0ac46b85b1da8129026f47b0470376bfa2eba6658716819d20fd2f9/68747470733a2f2f696e7369676874666163652e61692f6173736574732f696d672f637573746f6d2f7468756d625f7364756e65742e706e67"><img src="https://camo.githubusercontent.com/bd31ecf2c0ac46b85b1da8129026f47b0470376bfa2eba6658716819d20fd2f9/68747470733a2f2f696e7369676874666163652e61692f6173736574732f696d672f637573746f6d2f7468756d625f7364756e65742e706e67" width="600" data-canonical-src="https://insightface.ai/assets/img/custom/thumb_sdunet.png" style="max-width: 100%;"></a>
 </div>
-
-In this module, we provide datasets and training/inference pipelines for face alignment.
-
-Supported methods:
-
-- [x] [SDUNets (BMVC'2018)](alignment/heatmap)
-- [x] [SimpleRegression](alignment/coordinate_reg)
-
-
-[SDUNets](alignment/heatmap) is a heatmap based method which accepted on [BMVC](http://bmvc2018.org/contents/papers/0051.pdf).
-
-[SimpleRegression](alignment/coordinate_reg) provides very lightweight facial landmark models with fast coordinate regression. The input of these models is loose cropped face image while the output is the direct landmark coordinates.
-
-
-## Citation
-
-If you find *InsightFace* useful in your research, please consider to cite the following related papers:
-
-```
-@inproceedings{ren2023pbidr,
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在本模块中，我们提供用于人脸对齐的数据集和训练/推理管道。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持的方法：</font></font></p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> <a href="/deepinsight/insightface/blob/master/alignment/heatmap"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SDUNets (BMVC'2018)</font></font></a></li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> <a href="/deepinsight/insightface/blob/master/alignment/coordinate_reg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">简单回归</font></font></a></li>
+</ul>
+<p dir="auto"><a href="/deepinsight/insightface/blob/master/alignment/heatmap"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SDUNets是一种基于热图的方法，已被</font></font></a><font style="vertical-align: inherit;"></font><a href="http://bmvc2018.org/contents/papers/0051.pdf" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">BMVC</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">接受</font><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><a href="/deepinsight/insightface/blob/master/alignment/coordinate_reg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SimpleRegression</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提供了非常轻量级的面部标志模型和快速坐标回归。</font><font style="vertical-align: inherit;">这些模型的输入是松散裁剪的人脸图像，而输出是直接的地标坐标。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">引文</font></font></h2><a id="user-content-citation" class="anchor-element" aria-label="永久链接：引文" href="#citation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您发现</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">InsightFace</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">对您的研究有用，请考虑引用以下相关论文：</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>@inproceedings{ren2023pbidr,
   title={Facial Geometric Detail Recovery via Implicit Representation},
   author={Ren, Xingyu and Lattas, Alexandros and Gecer, Baris and Deng, Jiankang and Ma, Chao and Yang, Xiaokang},
   booktitle={2023 IEEE 17th International Conference on Automatic Face and Gesture Recognition (FG)},  
@@ -245,14 +169,85 @@ author={Deng, Jiankang and Guo, Jia and Niannan, Xue and Zafeiriou, Stefanos},
 booktitle={CVPR},
 year={2019}
 }
-```
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="@inproceedings{ren2023pbidr,
+  title={Facial Geometric Detail Recovery via Implicit Representation},
+  author={Ren, Xingyu and Lattas, Alexandros and Gecer, Baris and Deng, Jiankang and Ma, Chao and Yang, Xiaokang},
+  booktitle={2023 IEEE 17th International Conference on Automatic Face and Gesture Recognition (FG)},  
+  year={2023}
+ }
 
-## Contributing
+@article{guo2021sample,
+  title={Sample and Computation Redistribution for Efficient Face Detection},
+  author={Guo, Jia and Deng, Jiankang and Lattas, Alexandros and Zafeiriou, Stefanos},
+  journal={arXiv preprint arXiv:2105.04714},
+  year={2021}
+}
 
-Main contributors:
+@inproceedings{gecer2021ostec,
+  title={OSTeC: One-Shot Texture Completion},
+  author={Gecer, Baris and Deng, Jiankang and Zafeiriou, Stefanos},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2021}
+}
 
-- [Jia Guo](https://github.com/nttstar), ``guojia[at]gmail.com``
-- [Jiankang Deng](https://github.com/jiankangdeng) ``jiankangdeng[at]gmail.com``
-- [Xiang An](https://github.com/anxiangsir) ``anxiangsir[at]gmail.com``
-- [Jack Yu](https://github.com/szad670401) ``jackyu961127[at]gmail.com``
-- [Baris Gecer](https://barisgecer.github.io/) ``barisgecer[at]msn.com``
+@inproceedings{an2020partical_fc,
+  title={Partial FC: Training 10 Million Identities on a Single Machine},
+  author={An, Xiang and Zhu, Xuhan and Xiao, Yang and Wu, Lan and Zhang, Ming and Gao, Yuan and Qin, Bin and
+  Zhang, Debing and Fu Ying},
+  booktitle={Arxiv 2010.05222},
+  year={2020}
+}
+
+@inproceedings{deng2020subcenter,
+  title={Sub-center ArcFace: Boosting Face Recognition by Large-scale Noisy Web Faces},
+  author={Deng, Jiankang and Guo, Jia and Liu, Tongliang and Gong, Mingming and Zafeiriou, Stefanos},
+  booktitle={Proceedings of the IEEE Conference on European Conference on Computer Vision},
+  year={2020}
+}
+
+@inproceedings{Deng2020CVPR,
+title = {RetinaFace: Single-Shot Multi-Level Face Localisation in the Wild},
+author = {Deng, Jiankang and Guo, Jia and Ververas, Evangelos and Kotsia, Irene and Zafeiriou, Stefanos},
+booktitle = {CVPR},
+year = {2020}
+}
+
+@inproceedings{guo2018stacked,
+  title={Stacked Dense U-Nets with Dual Transformers for Robust Face Alignment},
+  author={Guo, Jia and Deng, Jiankang and Xue, Niannan and Zafeiriou, Stefanos},
+  booktitle={BMVC},
+  year={2018}
+}
+
+@article{deng2018menpo,
+  title={The Menpo benchmark for multi-pose 2D and 3D facial landmark localisation and tracking},
+  author={Deng, Jiankang and Roussos, Anastasios and Chrysos, Grigorios and Ververas, Evangelos and Kotsia, Irene and Shen, Jie and Zafeiriou, Stefanos},
+  journal={IJCV},
+  year={2018}
+}
+
+@inproceedings{deng2018arcface,
+title={ArcFace: Additive Angular Margin Loss for Deep Face Recognition},
+author={Deng, Jiankang and Guo, Jia and Niannan, Xue and Zafeiriou, Stefanos},
+booktitle={CVPR},
+year={2019}
+}" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献</font></font></h2><a id="user-content-contributing" class="anchor-element" aria-label="永久链接：贡献" href="#contributing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">主要贡献者：</font></font></p>
+<ul dir="auto">
+<li><a href="https://github.com/nttstar"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">郭家</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">,</font></font><code>guojia[at]gmail.com</code></li>
+<li><a href="https://github.com/jiankangdeng"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">邓建康</font></font></a> <code>jiankangdeng[at]gmail.com</code></li>
+<li><a href="https://github.com/anxiangsir"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">翔安</font></font></a> <code>anxiangsir[at]gmail.com</code></li>
+<li><a href="https://github.com/szad670401"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">于杰克</font></font></a> <code>jackyu961127[at]gmail.com</code></li>
+<li><a href="https://barisgecer.github.io/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">巴里斯·格塞尔</font></font></a> <code>barisgecer[at]msn.com</code></li>
+</ul>
+</article></div>

@@ -170,69 +170,7 @@ booktitle={CVPR},
 year={2019}
 }
 </code></pre><div class="zeroclipboard-container">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="@inproceedings{ren2023pbidr,
-  title={Facial Geometric Detail Recovery via Implicit Representation},
-  author={Ren, Xingyu and Lattas, Alexandros and Gecer, Baris and Deng, Jiankang and Ma, Chao and Yang, Xiaokang},
-  booktitle={2023 IEEE 17th International Conference on Automatic Face and Gesture Recognition (FG)},  
-  year={2023}
- }
-
-@article{guo2021sample,
-  title={Sample and Computation Redistribution for Efficient Face Detection},
-  author={Guo, Jia and Deng, Jiankang and Lattas, Alexandros and Zafeiriou, Stefanos},
-  journal={arXiv preprint arXiv:2105.04714},
-  year={2021}
-}
-
-@inproceedings{gecer2021ostec,
-  title={OSTeC: One-Shot Texture Completion},
-  author={Gecer, Baris and Deng, Jiankang and Zafeiriou, Stefanos},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year={2021}
-}
-
-@inproceedings{an2020partical_fc,
-  title={Partial FC: Training 10 Million Identities on a Single Machine},
-  author={An, Xiang and Zhu, Xuhan and Xiao, Yang and Wu, Lan and Zhang, Ming and Gao, Yuan and Qin, Bin and
-  Zhang, Debing and Fu Ying},
-  booktitle={Arxiv 2010.05222},
-  year={2020}
-}
-
-@inproceedings{deng2020subcenter,
-  title={Sub-center ArcFace: Boosting Face Recognition by Large-scale Noisy Web Faces},
-  author={Deng, Jiankang and Guo, Jia and Liu, Tongliang and Gong, Mingming and Zafeiriou, Stefanos},
-  booktitle={Proceedings of the IEEE Conference on European Conference on Computer Vision},
-  year={2020}
-}
-
-@inproceedings{Deng2020CVPR,
-title = {RetinaFace: Single-Shot Multi-Level Face Localisation in the Wild},
-author = {Deng, Jiankang and Guo, Jia and Ververas, Evangelos and Kotsia, Irene and Zafeiriou, Stefanos},
-booktitle = {CVPR},
-year = {2020}
-}
-
-@inproceedings{guo2018stacked,
-  title={Stacked Dense U-Nets with Dual Transformers for Robust Face Alignment},
-  author={Guo, Jia and Deng, Jiankang and Xue, Niannan and Zafeiriou, Stefanos},
-  booktitle={BMVC},
-  year={2018}
-}
-
-@article{deng2018menpo,
-  title={The Menpo benchmark for multi-pose 2D and 3D facial landmark localisation and tracking},
-  author={Deng, Jiankang and Roussos, Anastasios and Chrysos, Grigorios and Ververas, Evangelos and Kotsia, Irene and Shen, Jie and Zafeiriou, Stefanos},
-  journal={IJCV},
-  year={2018}
-}
-
-@inproceedings{deng2018arcface,
-title={ArcFace: Additive Angular Margin Loss for Deep Face Recognition},
-author={Deng, Jiankang and Guo, Jia and Niannan, Xue and Zafeiriou, Stefanos},
-booktitle={CVPR},
-year={2019}
-}" tabindex="0" role="button">
+   
       <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
     <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
 </svg>
